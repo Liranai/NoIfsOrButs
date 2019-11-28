@@ -57,4 +57,8 @@ def test_add_ship():
     assert board_with_ship.bomb(row=1, col=2) == 3
 
 
-#def test_add_aircraft_carrier():
+def test_add_type_of_ship():
+    board = zeeslagje.Board()
+
+    board_with_ship = zeeslagje.add_ship_vertically(current_board=board, ship_type=5, start_location=(1, 1))
+    assert all(board_with_ship.bomb(row, col) == 5 for row, col in [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5)])
