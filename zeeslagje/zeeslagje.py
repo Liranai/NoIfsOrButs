@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 
 class Board:
@@ -8,3 +8,9 @@ class Board:
     def bomb(self, row, col):
         return self.board[row][col]
 
+
+def add_ship(current_board: Board, ship_type: int, locations: List[Tuple[int, int]]):
+    for x,y in locations:
+        current_board.board[x][y] = ship_type
+
+    return current_board

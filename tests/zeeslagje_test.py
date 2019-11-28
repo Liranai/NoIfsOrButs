@@ -47,3 +47,14 @@ def test_ship_is_recognised_on_board():
         row_count += 1
 
     assert bomb is True
+
+
+def test_add_ship():
+    board = zeeslagje.Board()
+
+    board_with_ship = zeeslagje.add_ship(current_board=board, ship_type=3, locations=[(1, 2), (1, 3), (1, 4)])
+
+    assert board_with_ship.bomb(row=1, col=2) == 3
+
+
+#def test_add_aircraft_carrier():
